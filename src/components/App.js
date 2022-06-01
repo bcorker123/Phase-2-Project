@@ -26,7 +26,7 @@ import "./App.css";
 // you prefer.
 
 function App() {
-  return <div className="App">phase 2 project</div>;
+  return <div className="App"></div>;
 }
 
 export default App;
