@@ -1,5 +1,65 @@
-import "./App.css";
+import "../App.css";
+import React, { useState } from "react";
+import { Switch, Route } from "react-router-dom";
+import NavBar from "./NavBar";
+import Form from "./AddFoxForm";
+import Home from "./Home";
+import Foxes from "./Foxes";
 
+function App() {
+  const [foxes, setFoxes] = useState([]);
+
+  const renderFoxes = (data) => {
+    setFoxes(data);
+  };
+
+  const addFox = (newFox) => {
+    fetch("http://localhost:3001/foxes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newFox),
+    })
+      .then((r) => r.json())
+      .then((newFox) => setFoxes([...foxes, newFox]));
+  };
+
+  const handleCommentSubmit = (e, comment, id) => {
+    e.preventDefault();
+    const newCommentsArr = [...foxes[id - 1].comments, comment];
+    fetch(`http://localhost:3001/foxes/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ comments: newCommentsArr }),
+    });
+  };
+
+  return (
+    <div className="App">
+      <NavBar />
+      <Switch>
+        <Route path="/foxes/new">
+          <Form addFox={addFox} />
+        </Route>
+        <Route path="/foxes">
+          <Foxes
+            foxes={foxes}
+            renderFoxes={renderFoxes}
+            handleCommentSubmit={handleCommentSubmit}
+          />
+        </Route>
+        <Route exact path="/">
+          <Home foxes={foxes} />
+        </Route>
+      </Switch>
+    </div>
+  );
+}
+
+export default App;
 // 1. You must make a single page application (only one index.html file)
 // using create-react-app.
 
@@ -25,8 +85,8 @@ import "./App.css";
 // framework (like React Bootstrap, Semantic UI , or Material UI) if
 // you prefer.
 
-function App() {
-  return <div className="App"></div>;
-}
-
-export default App;
+/* 
+how about we do 'foxbook' where we have different 'profiles' in the db 
+using random pics from the random fox api and have people leave comments
+and shiz
+*/

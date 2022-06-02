@@ -1,0 +1,65 @@
+{
+  "foxes": [
+    {
+      "0": "jerry rocks!",
+      "1": "love this guy",
+      "2": "asdf",
+      "id": 1,
+      "name": "Jerry",
+      "image": "https://randomfox.ca/images/107.jpg",
+      "comments": [
+        "jerry rocks!",
+        "love this guy",
+        "asdf"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jillian",
+      "image": "https://randomfox.ca/images/41.jpg",
+      "comments": [
+        "beautiful queen",
+        "slayyyy",
+        "wowwwwww!!"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Jacques",
+      "image": "https://randomfox.ca/images/43.jpg",
+      "comments": [
+        "king",
+        "a wise old man...",
+        "holy crap"
+      ]
+    },
+    {
+      "name": "Jex",
+      "image": "https://randomfox.ca/images/69.jpg",
+      "comments": [
+        "daaannnggg",
+        "daaannngggggggg",
+        "can i take you home??"
+      ],
+      "id": 4
+    },
+    {
+      "name": "Jory",
+      "image": "https://randomfox.ca/images/6.jpg",
+      "comments": [
+        "so pretty!",
+        "golden hour wow"
+      ],
+      "id": 5
+    },
+    {
+      "name": "Janet",
+      "image": "https://randomfox.ca/images/77.jpg",
+      "comments": [
+        "sniff them flowers, girl",
+        "ooh pretty colors"
+      ],
+      "id": 6
+    }
+  ]
+}
