@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function Form({ addFox }) {
   const [formData, setFormData] = useState({
     name: "",
     number: "",
   });
+
+  const history = useHistory();
 
   const handleInput = ({ target: { name, value } }) => {
     setFormData({ ...formData, [name]: value });
@@ -18,6 +21,7 @@ function Form({ addFox }) {
       comments: [],
     };
     addFox(newFox);
+    history.push("/foxes");
   };
 
   return (
