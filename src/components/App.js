@@ -84,9 +84,3 @@ export default App;
 // id/className to style your elements. You can also incorporate a UI
 // framework (like React Bootstrap, Semantic UI , or Material UI) if
 // you prefer.
-
-/* 
-how about we do 'foxbook' where we have different 'profiles' in the db 
-using random pics from the random fox api and have people leave comments
-and shiz
-*/

@@ -25,9 +25,11 @@ function Form({ addFox }) {
   };
 
   return (
-    <div className="add-fox-form">
+    <div id="fox-form">
+      <h1 id="form-title">Add a Fox! 🦊</h1>
       <form onSubmit={handleSubmit}>
         <input
+          className="add-fox-form"
           type="text"
           placeholder="name"
           name="name"
@@ -35,13 +37,16 @@ function Form({ addFox }) {
           onChange={handleInput}
         />
         <input
+          className="add-fox-form"
           type="text"
           placeholder="number(1-100)"
           name="number"
           value={formData.number}
           onChange={handleInput}
         />
-        <button type="submit">Submit</button>
+        <button className="add-fox-form" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

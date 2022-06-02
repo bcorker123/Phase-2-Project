@@ -11,27 +11,33 @@ function Foxes({ foxes, renderFoxes, handleCommentSubmit }) {
   const displayFoxes = foxes.map((fox) => {
     const comments = fox.comments.map((comment) => {
       return (
-        <li key={comment}>
+        <p key={comment} className="comments">
           <em>"{comment}"</em>
-        </li>
+        </p>
       );
     });
 
     return (
-      <div className="fox" key={fox.id}>
-        <h2 className="fox-name">{fox.name}</h2>
-        <img className="fox-image" src={fox.image} alt={fox.name} />
-        <AddCommentForm fox={fox} handleCommentSubmit={handleCommentSubmit} />
-        <ul className="fox-comments">Comments:{comments}</ul>
-      </div>
+      <>
+        <div className="fox" key={fox.id}>
+          <h2 className="fox-name">🦊{fox.name}</h2>
+          <img className="fox-image" src={fox.image} alt={fox.name} />
+          <AddCommentForm fox={fox} handleCommentSubmit={handleCommentSubmit} />
+          <div>
+            Comments:
+            {comments}
+          </div>
+        </div>
+        <br />
+      </>
     );
   });
 
   return (
-    <>
-      <h1>Foxes</h1>
+    <div id="foxes">
+      <h1 className="foxes-title">🦊🦊🦊Foxes🦊🦊🦊</h1>
       {displayFoxes}
-    </>
+    </div>
   );
 }
 

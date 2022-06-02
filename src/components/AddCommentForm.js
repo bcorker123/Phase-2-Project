@@ -13,15 +13,18 @@ function AddCommentForm({ fox: { name, id }, handleCommentSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Add comment to {name}'s profile</label>
+    <form className="comment-form" onSubmit={handleSubmit}>
+      <label className="comment-form">Add comment to {name}'s profile</label>
       <input
+        className="comment-form"
         type="text"
         placeholder="something nice"
         value={comment}
         onChange={handleInput}
       ></input>
-      <button type="submit">Add Comment</button>
+      <button className="comment-form" type="submit">
+        Add Comment
+      </button>
     </form>
   );
 }
