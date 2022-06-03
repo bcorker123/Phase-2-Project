@@ -1,13 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import AddCommentForm from "./AddCommentForm";
 
-function Foxes({ foxes, renderFoxes, handleCommentSubmit }) {
-  useEffect(() => {
-    fetch("http://localhost:4000/foxes")
-      .then((r) => r.json())
-      .then((foxes) => renderFoxes(foxes));
-  });
-
+function Foxes({ foxes, handleCommentSubmit }) {
   const displayFoxes = foxes.map((fox) => {
     const comments = fox.comments.map((comment) => {
       return (

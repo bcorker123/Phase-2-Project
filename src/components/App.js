@@ -1,5 +1,5 @@
 import "../App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Form from "./AddFoxForm";
@@ -13,6 +13,12 @@ function App() {
   const renderFoxes = (data) => {
     setFoxes(data);
   };
+
+  useEffect(() => {
+    fetch("http://localhost:4000/foxes")
+      .then((r) => r.json())
+      .then((foxes) => renderFoxes(foxes));
+  }, []);
 
   const addFox = (newFox) => {
     fetch("http://localhost:4000/foxes", {
