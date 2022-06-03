@@ -14,7 +14,7 @@ function App() {
   };
 
   const addFox = (newFox) => {
-    fetch("http://localhost:3001/foxes", {
+    fetch("http://localhost:4000/foxes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +28,7 @@ function App() {
   const handleCommentSubmit = (e, comment, id) => {
     e.preventDefault();
     const newCommentsArr = [...foxes[id - 1].comments, comment];
-    fetch(`http://localhost:3001/foxes/${id}`, {
+    fetch(`http://localhost:4000/foxes/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

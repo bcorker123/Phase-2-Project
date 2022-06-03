@@ -3,7 +3,7 @@ import AddCommentForm from "./AddCommentForm";
 
 function Foxes({ foxes, renderFoxes, handleCommentSubmit }) {
   useEffect(() => {
-    fetch("http://localhost:3001/foxes")
+    fetch("http://localhost:4000/foxes")
       .then((r) => r.json())
       .then((foxes) => renderFoxes(foxes));
   });
