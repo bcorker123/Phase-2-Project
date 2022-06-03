@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import Form from "./AddFoxForm";
 import Home from "./Home";
 import Foxes from "./Foxes";
+import About from "./About";
 
 function App() {
   const [foxes, setFoxes] = useState([]);
@@ -53,6 +54,9 @@ function App() {
         </Route>
         <Route exact path="/">
           <Home foxes={foxes} />
+        </Route>
+        <Route exact path="/about">
+          <About />
         </Route>
       </Switch>
     </div>

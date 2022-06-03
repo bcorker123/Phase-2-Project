@@ -36,6 +36,16 @@ function NavBar() {
             Create Fox ➕🦊
           </NavLink>
         </li>
+        <li className="nav">
+          <NavLink
+            className="nav"
+            exact
+            to="/about"
+            style={{ textDecoration: "none" }}
+          >
+            About 🦊
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
